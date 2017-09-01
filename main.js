@@ -13,8 +13,8 @@ $(document).ready(function(){
 //        }, 1000);
 //    }
     var prevColor;
-    $('.loading').css('display', 'none'); //remove when loading
-    //        setTimeout(loading, 300);
+//     $('.loading').css('display', 'none'); //remove when loading
+    setTimeout(loading, 300);
     $(document).click(function (event) {
         var clickOver = $(event.target);
         var opened = $(".media-button").hasClass("media-active");
