@@ -1,0 +1,67 @@
+/*----------------------------------------------
+                Landscape Page
+-----------------------------------------------*/
+#home {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background:  url(https://static.pexels.com/photos/396158/pexels-photo-396158.jpeg) 0 0/ cover no-repeat;
+    opacity: 0.8;
+    z-index: 49;
+}
+.intro {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+}
+.intro h1 {
+    color: white;
+    font-size: 70px;
+    text-shadow: 0 3px 5px black;
+}
+.intro h2 {
+    font-size: 45px;
+    color: whitesmoke;
+    font-weight: 100;
+    text-shadow: 0 1px 1px black;
+}
+#home span {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+    padding-bottom: 1.4px;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+}
+#home span:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: white;
+    width: 100%;
+    height: 2.4px;
+    padding-left: 4px;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+}
+#home span:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}

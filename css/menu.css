@@ -1,0 +1,306 @@
+/*----------------------------------------------
+                    Menu
+-----------------------------------------------*/
+
+/*---------------Toggle Button-----------------*/
+.dark-toggle .toggle-button {
+    border-color: black !important;
+}
+.dark-toggle .media-button {
+    border-color: black !important;
+}
+.dark-toggle .media-button:before {
+    border-bottom-color: black !important;
+} 
+.dark-toggle .media-button a {
+    color: black !important;
+}
+.dark-toggle .toggle span {
+    background: black !important;
+}
+#menu {
+    position: relative;
+    z-index: 50;
+}
+.toggle-button{
+    position: fixed;
+    top: 5%;
+    left: 2.5%;
+    width: 55px;
+    height: 55px;
+    border: 2px solid whitesmoke;
+    border-radius: 50%;
+    z-index: 100;
+    cursor: pointer;
+}
+.toggle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    width: 25px;
+    height: 35px;
+    cursor: pointer;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+}
+.toggle span {
+    position: absolute;
+    display: block;
+    background: whitesmoke;
+    width:50%;
+    height: 3px;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+}
+.toggle span:nth-child(even) {
+    left: 50%;
+}
+.toggle span:nth-child(1),
+.toggle span:nth-child(2){
+    top: 15%;
+}
+
+.toggle span:nth-child(3),
+.toggle span:nth-child(4) 
+{
+    top: 45%;
+}
+
+.toggle span:nth-child(5),
+.toggle span:nth-child(6) 
+{
+    top: 75%;
+}
+.active .toggle span:nth-child(3) {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 0;
+
+}
+.active .toggle span:nth-child(4) {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 0;
+
+}
+.active .toggle span:nth-child(1) {
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+
+}
+.active .toggle span:nth-child(2) {
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+
+}
+.active .toggle span:nth-child(1) {
+    -webkit-transform: rotate(45deg) translate(55%, -65%);
+    transform: rotate(45deg) translate(55%, -65%);
+}
+.active .toggle span:nth-child(2) {
+    -webkit-transform: rotate(-45deg) translate(-55%, -65%);
+    transform: rotate(-45deg) translate(-55%, -65%);
+}
+
+.active .toggle span:nth-child(5) {
+    -webkit-transform-origin: bottom left;
+    transform-origin: bottom left;
+
+}
+.active .toggle span:nth-child(6) {
+    -webkit-transform-origin: bottom right;
+    transform-origin: bottom right;
+}
+
+.active .toggle span:nth-child(5) {
+    -webkit-transform: rotate(-45deg) translate(55%, 65%);
+    transform: rotate(-45deg) translate(55%, 65%);
+}
+.active .toggle span:nth-child(6) {
+    -webkit-transform: rotate(45deg) translate(-55%, 65%);
+    transform: rotate(45deg) translate(-55%, 65%);
+}
+/*--------------Contact button----------------*/
+.media-button {
+    position: fixed;
+    left: 2.5%;
+    top: 89%;
+    max-width: 40px;
+    width: 160px;
+    height: 40px;
+    border-radius: 25px;
+    border: 2px solid whitesmoke;
+    z-index: 100;
+    cursor: pointer;
+    display: block;
+    -webkit-transition: 0.6s linear;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+    overflow: hidden;
+}
+.media-button:before {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 9px solid whitesmoke;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+}
+.media-button a:first-of-type {
+    position: absolute;
+    left: 48px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 25px;
+    opacity: 0;
+    color: lightgray;
+}
+.media-button a:last-of-type {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: lightgray;
+}
+/*---------------media button hover state -------------*/
+.media-button.media-active {
+    max-width: 160px;
+}
+.media-button.media-active:before {
+    -webkit-transform: rotateZ(90deg) translate(1px, 8px);
+    transform: rotateZ(90deg) translate(1px, 8px);
+}
+.media-button.media-active a {
+    opacity: 1;
+    -webkit-transition: 0.2s 0.3s linear;
+    transition: 0.2s 0.3s linear;
+}
+/*--------------------Slider-------------------*/
+.nav-slide {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(24, 24, 30, 1);
+    z-index: 1;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s linear;
+    transition: opacity 0.3s linear;
+}
+.active .nav-slide {
+    opacity: 1;
+    left: 0;
+}
+/*-----------------Menu Item---------------*/
+
+nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+
+nav ul {
+    width: 100vw;
+    height: 200px;
+    list-style: none;
+    text-align: center;
+    line-height: 200px;
+    padding: 0;
+    margin: 0;
+}
+.active nav ul:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10px;
+    width: 0;
+    background: whitesmoke;
+    -webkit-animation: border-slide 0.4s 0.5s linear forwards;
+    animation: border-slide 0.4s 0.5s linear forwards;
+}
+.active nav ul:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 10px;
+    width: 0%;
+    background: whitesmoke;
+    -webkit-animation: border-slide 0.4s 0.5s linear forwards;
+    animation: border-slide 0.4s 0.5s linear forwards;
+}
+@-webkit-keyframes border-slide {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@-webkit-keyframes border-slide {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+nav ul li {
+    display: inline-block;
+    padding: 0 60px;
+    height: 200px;
+    -webkit-transition: 0.7s linear;
+    transition: 0.7s linear;
+    opacity: 0;
+}
+.active nav ul li {
+    opacity: 1;
+    -webkit-transition-delay: 1s;
+    transition-delay: 1s
+}
+nav ul li a{
+    position: relative;
+    text-decoration:  none;
+    font-size:  40px;
+    color: whitesmoke;
+    overflow: hidden;
+    text-align: center;
+}
+nav ul li a:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    visibility: hidden;
+    -webkit-transition: 0.3s linear;
+    transition: 0.3s linear;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    background-color: whitesmoke;
+    z-index: -1;
+}
+nav ul li a:hover:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    visibility: visible;
+}

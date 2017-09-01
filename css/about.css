@@ -1,0 +1,31 @@
+
+/*----------------------------------------------
+                    About Page
+-----------------------------------------------*/
+#about {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url(https://static.pexels.com/photos/97076/pexels-photo-97076.jpeg) 0/ cover no-repeat;
+    z-index: -1;
+    overflow: hidden;
+}
+#about h1 {
+    position: absolute;
+    top: 11%;
+    right: 350px;
+    font-size: 58px;
+    color: whitesmoke;
+    text-shadow: 0 2px 4px black;
+}
+#about p{
+    position: absolute;
+    top: 32%;
+    right: 5%;
+    text-indent: 3%;
+    max-width: 810px;
+    font-size: 1.5em;
+    color: whitesmoke;
+    text-align: justify;
+    line-height: 60px;
+}

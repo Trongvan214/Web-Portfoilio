@@ -1,0 +1,93 @@
+@media screen and (max-width: 425px) {
+    #home .intro h1 {
+        font-size: 26px;
+    }
+    #home .intro h2 {
+        font-size: 19px;
+    }
+    #home span {
+        font-size: 13px;
+    }
+    #about {
+        background: url(https://static.pexels.com/photos/97076/pexels-photo-97076.jpeg) 60% 0/ cover no-repeat;
+    }
+    #about h1 {
+        font-size: 40px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        top: 5%;
+    }
+    #about p {
+        width: calc(100% - 60px);
+        max-width: 100%;
+        font-size: 0.9em;
+        line-height: 40px;
+        top: 20%;
+        right: 0;
+        padding: 0 30px;
+    }
+    #skill .skill-info {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        margin: 0 !important;
+    }
+    /*--------Menu-----------*/
+    #menu .toggle-button {
+        width: 35px;
+        height: 35px;
+    }
+    #menu .toggle-button .toggle {
+        width: 16px;
+        height: 19px;
+    }
+    #menu .nav-slide nav ul {
+        height: 340px;
+        line-height: 85px;
+    }
+    #menu .nav-slide nav ul:before, 
+    #menu .nav-slide nav ul:after {
+        height: 7px;
+    }
+    #menu .nav-slide nav ul li {
+        display: block;
+        height: 85px;
+    }
+    /*--------media toggle button----------*/
+    #menu .media-button {
+        max-width: 25px;
+        height: 25px;
+    }
+    #menu .media-button:before {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 9px solid whitesmoke;
+    }
+    #menu .media-button.media-active:before {
+         display: none;   
+    }
+    #menu .media-button.media-active {
+        max-width: 70px;
+    }
+    .media-button.media-active a {
+        font-size: 20px !important;
+    }
+    .media-button.media-active a:first-of-type {
+        left: 10px;
+    }
+    .media-button.media-active a:last-of-type {
+        left: 40px;
+    }
+
+}
+
+/*--------------media 325px---------------*/
+@media screen and (max-width: 320px) {
+    #about p {
+        font-size: 0.8em;
+    }
+    #skill .skill-info h1 {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,193 @@
+/*-------------------------------------------------
+                    Loading Page
+-------------------------------------------------*/
+.loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 9999;
+}
+.backdrop {
+    width: 100%;
+    height: 100%;
+}
+.backdrop  div {
+    float: left;
+    height: 100%;
+    width: calc(100%/6);
+    background: rgb(39, 39, 40);
+    overflow: hidden;
+    border-right: 1px solid rgba(187, 189, 193, 0.2);
+    border-left: 1px solid rgba(187, 189, 193, 0.2);
+    transition-delay: 3.8s !important;
+}
+/*-------------Custom Speed transition----------*/
+.backdrop div:nth-child(1) {
+    transition: 0.2s linear;
+}
+.backdrop div:nth-child(2) {
+    transition: 0.4s linear;
+}
+.backdrop div:nth-child(3) {
+    transition: 0.5s linear;
+}
+.backdrop div:nth-child(4) {
+    transition: 0.4s linear;
+}
+.backdrop div:nth-child(5) {
+    transition: 0.2s linear;
+}
+.backdrop div:nth-child(6) {
+    transition: 0.3s linear;
+}
+.active .backdrop div {
+    transform: translate(0,100%);
+}
+/*-------------------------------------------------
+                Main animation Content
+-------------------------------------------------*/
+.stick {
+    width: 340px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+.stick:before{
+    content: '';
+    position: absolute;
+    max-width: 0;
+    width: 100px;
+    overflow: hidden;
+    height: 19px;
+    background: #2809c2;
+    z-index: 10;
+    transform: translate(120px,40px);
+    transition: visibility 0s 2.2s linear;
+}
+.stick:after {
+    content: 'Welcome';
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: whitesmoke;
+    font-size: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+.stick div {
+    height: 25px;
+    max-width: 10px;
+    width: 100%;
+    background: #2809c2;
+    visibility: hidden;
+    transition: transform 0.7s 0.5s linear, max-width 1s linear, visibility 0s 2.1s linear, -webkit-transform 0.7s 0.5s linear; /*custom speed for stick*/
+    z-index: 4;
+}
+/*------------------------Where each indivual line up to the parent---------------------*/ 
+.stick .num1 {
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+}
+.stick .num2 {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+}
+.stick .num3  {
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+.stick .num4 {
+    position: absolute;
+    top: 25px;
+    left: 0;
+}
+.stick .num5 {
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+}
+.stick .num6 {
+    position: absolute;
+    top: 25px;
+    left: 0;
+}
+.stick .num7 {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+}
+.stick .num8 {
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+/*-------------------Animation with Active--------------*/ 
+.active.loading .stick {
+    opacity: 0;
+    -webkit-transition: opacity 0s 5.5s linear;
+    transition: opacity 0s 5.5s linear;    
+}
+.show-text.stick:after {
+    opacity: 1;
+    background: rgb(39, 39, 40);
+}
+.active .stick div{
+    max-width: 340px;
+}
+/*-------------------controlling group of sticks and when they start expanding----------------*/
+
+.active .stick .content-backdrop:nth-child(1),
+.active .stick .content-backdrop:nth-child(4)
+{
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+}
+.active .stick .content-backdrop:nth-child(2),
+.active .stick .content-backdrop:nth-child(3)
+{
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 1s;
+}
+.active .stick .layer {
+    -webkit-transition-delay: 1s;
+    transition-delay: 1.2s;
+}
+.active .stick .border {
+    -webkit-transition-delay: 1.3s;
+    transition-delay: 1.4s;
+}
+/*-------------------Scatter sticks----------------*/
+.scatter .num1 {-webkit-transform: rotateZ(90deg) translate(-17px,128px);transform: rotateZ(90deg) translate(-17px,128px);}
+.scatter .num2 {-webkit-transform: rotateZ(90deg) translate(8px,152.5px);transform: rotateZ(90deg) translate(8px,152.5px);}
+.scatter .num3 {-webkit-transform: rotateZ(90deg) translate(-8.5px,-152.5px);transform: rotateZ(90deg) translate(-8.5px,-152.5px);}
+.scatter .num4 {-webkit-transform: rotateZ(90deg) translate(16.5px,-128px);transform: rotateZ(90deg) translate(16.5px,-128px);}
+.scatter .num5 {-webkit-transform: rotateZ(90deg) translate(-17px,177.5px);transform: rotateZ(90deg) translate(-17px,177.5px);}
+.scatter .num6 {-webkit-transform: rotateZ(90deg) translate(16.5px,-177.5px);transform: rotateZ(90deg) translate(16.5px,-177.5px);}
+.scatter .num7 {-webkit-transform: rotateZ(90deg) translate(-42px,202px);transform: rotateZ(90deg) translate(-37px,202px);}
+.scatter .num8 {-webkit-transform: rotateZ(90deg) translate(36.5px,-202px);transform: rotateZ(90deg) translate(36.5px,-202px);}
+/*-------------------Progress Bar------------------*/
+.progress.stick:before {
+    -webkit-transition: 1.5s 0.6s linear;
+    transition: 1.5s 0.6s linear;
+    max-width: 100px;
+    z-index: 100;
+    visibility: hidden;   /*-------Make the fake progress hide after delay----------*/
+}
+.progress.stick div {
+    visibility: visible;  /*-----Add progress make the each stick appear with delay----------*/
+}
+/*-----------------Slide out animation---------------*/ 
+ .slide-out {
+    transform: translate(100%,0);
+    transition: transform 0.5s linear, -webkit-transform 0.5s linear !important; /*------control the slide to the right at the end and linear speed----/* 
+}
