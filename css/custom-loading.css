@@ -39,6 +39,8 @@
     transition: 0.2s linear;
 }
 .backdrop div:nth-child(6) {
+    position: absolute;
+    right: 0;
     transition: 0.3s linear;
 }
 .active .backdrop div {
