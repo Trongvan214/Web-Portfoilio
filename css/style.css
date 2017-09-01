@@ -14,5 +14,6 @@ body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     height: 100vh;
     width: 100vw;
-    overflow: hidden !important;
+    ooverflow-x: hidden !important;
+    overflow-y: hidden !important;
 }
